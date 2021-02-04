@@ -1,0 +1,89 @@
+/* Body general settings */
+
+@font-face {
+  font-family: roboto-mono;
+  src: url("Roboto_Mono/RobotoMono-VariableFont_wght.ttf");
+}
+
+body{
+  font-size: 20pt;
+  text-align: center;
+  font-family: roboto-mono;
+}
+
+/* Two decimal leading zero */
+
+ol {
+  counter-reset: items;
+}
+li {
+  display: block;
+  counter-increment: items;
+}
+li:before {
+  content: "00" counter(items)". ";
+}
+li:nth-child(n+10):before {
+  content: "0" counter(items)". ";
+}
+li:nth-child(n+100):before {
+  content: counter(items)". ";
+}
+
+/* Grid settings */
+
+#pokedexForm {
+  display: inline-grid;
+  grid-gap: 5pt;
+  background-color: #819F51;
+  padding: 5pt;
+  height: 600pt;
+  width: 800pt;
+  text-align: left;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#pokemonListGridItem {
+  grid-column: 1 / span 6;
+  grid-row: 1/ span 2;
+  padding-left: 30pt;
+  padding-right: 30pt;
+}
+
+#pokemonListStatusGridItem { 
+  grid-column: 7 / span 6;
+  grid-row: 1 / span 1;
+}
+#pokemonOptionsGridItem {
+  grid-column: 7 / span 6;
+  grid-row: 2 / span 1;
+}
+
+/* Pokemon list settings */
+#pokemonListGridItem h1 {
+  font-size: 80pt;
+  margin-top: 0pt;
+  margin-bottom: 0;
+}
+
+#pokemonList{
+  width: 100%;
+  height: 480pt;
+  overflow: auto;
+  font-size: 52pt;
+  margin: 0;
+  padding: 0;
+}
+
+#pokemonList li {
+  text-transform: uppercase;
+}
+
+/* Options settings */
+
+#pokemonOptionsGridItem {
+  font-size: 52pt;
+}
